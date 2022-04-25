@@ -52,15 +52,37 @@ const InfoContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
+  gap: 20px;
 `;
 
 const SocialsContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 15px;
   max-width: fit-content;
   width: 100%;
   /* margin: auto; */
+`;
+
+const Socials = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-start;
+  width: 100%;
+
+  h3 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 18px;
+    color: ${color.white};
+  }
+  a {
+    color: ${color.white};
+  }
 `;
 
 const MenuItemsContainer = styled.div`
@@ -87,7 +109,27 @@ export default function Footer() {
           <img src={logo}></img>
         </LogoContainer>
         <InfoContainer>
-          <SocialsContainer>socials</SocialsContainer>
+          <SocialsContainer>
+            <Socials>
+              <h3>Facebook: </h3>
+              <a
+                href="https://www.facebook.com/physiotherapydemetrisioannou"
+                target="_blank"
+              >
+                Physiotherapy ioannou demetris
+              </a>
+            </Socials>
+            <Socials>
+              <h3>Email: </h3>
+              <a href="mailto: ioannoydemetris@hotmail.com">
+                ioannoydemetris@hotmail.com
+              </a>
+            </Socials>
+            <Socials>
+              <h3>Tel: </h3>
+              <p>9999999999</p>
+            </Socials>
+          </SocialsContainer>
           <MenuItemsContainer>
             {navItemsArr.map((x, idx) => (
               <Link key={idx} href={x.link} passHref>
