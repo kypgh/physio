@@ -15,6 +15,9 @@ const Inner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1140px;
+  width: 100%;
+  margin: auto;
 `;
 const LogoContainer = styled.div`
   display: flex;
@@ -25,18 +28,19 @@ const LogoContainer = styled.div`
   img {
     max-width: 200px;
     height: auto;
-    z-index: 2;
+    z-index: 1;
   }
   &:before {
     content: "";
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     background-color: ${color.white};
     border-radius: 50%;
-    z-index: 1;
+    /* z-index: 1; */
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     filter: blur(20px);
   }
 `;

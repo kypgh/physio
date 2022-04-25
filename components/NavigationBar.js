@@ -15,6 +15,7 @@ const Position = styled.div`
   background-color: ${color.lightBlue};
   box-shadow: 0px 5px 10px 0px ${color.grey};
   border-radius: 0px 0px 60px 0px;
+  z-index: 5;
 
   @media (max-width: 991px) {
     border-radius: 0;
@@ -50,10 +51,11 @@ const LogoContainer = styled.div`
   &:before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
     background-color: ${color.white};
     z-index: 1;
     border-radius: 50%;
