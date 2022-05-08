@@ -89,6 +89,7 @@ const MenuItemsContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
+  opacity: 1;
 `;
 
 const MenuItem = styled.a`
