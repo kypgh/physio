@@ -2,8 +2,6 @@ import Image from "next/image";
 import styled from "styled-components";
 import sanityClient from "../utils/sanity";
 
-// import sanityClient from "@sanity/client";
-
 import DefaultLayout from "../components/DefaultLayout";
 import {
   Container,

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CusH1 = styled.h1`
   font-size: 32px;
-  font-weight: bolder;
+  font-weight: 800;
   text-transform: uppercase;
   color: ${({ color }) => color};
   @media (max-width: 991px) {
@@ -16,7 +16,7 @@ export const H1 = ({ children, color }) => {
 
 const CusH2 = styled.h2`
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: capitalize;
   color: ${({ color }) => color};
   @media (max-width: 991px) {
