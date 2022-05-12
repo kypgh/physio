@@ -12,9 +12,9 @@ const Position = styled.div`
   position: sticky;
   top: 0;
   left: 0;
-  background-color: ${color.lightBlue};
-  box-shadow: 0px 5px 10px 0px ${color.grey};
-  border-radius: 0px 0px 60px 0px;
+  background-color: ${color.white};
+  box-shadow: 0px 5px 10px 0px ${color.darkGrey};
+  /* border-radius: 0px 0px 60px 0px; */
   z-index: 5;
 
   @media (max-width: 991px) {
@@ -73,7 +73,7 @@ const NavItemsContainer = styled.div`
     top: 100px;
     left: ${({ open }) => (open ? "0px" : "-300px")};
     transition: 0.3s all ease;
-    background-color: ${color.lightBlue};
+    background-color: ${color.white};
     height: 100vh;
     flex-direction: column;
     justify-content: flex-start;
@@ -82,6 +82,12 @@ const NavItemsContainer = styled.div`
     width: 100%;
     gap: 20px;
     padding-top: 20px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(8, 72, 111, 1) 95%,
+      rgba(9, 58, 89, 1) 100%
+    );
   }
 `;
 
@@ -90,18 +96,27 @@ const NavItem = styled.a`
   font-size: 20px;
   font-weight: bold;
   margin: 0 10px;
-  color: ${color.white};
+  color: ${({ active }) => (active ? color.darkGrey : color.grey)};
   border-bottom: ${({ active }) =>
-    active ? `2px solid ${color.white}` : "2px solid transparent"};
+    active ? `2px solid ${color.darkGrey}` : "2px solid transparent"};
   transition: 0.3s all ease;
   cursor: pointer;
   text-transform: uppercase;
+
+  @media (max-width: 991px) {
+    color: ${({ active }) => (active ? color.white : color.blue)};
+    background-color: ${({ active }) =>
+      active ? color.lightBlue : "tranparent"};
+    border: none;
+    padding: ${({ active }) => (active ? "5px 15px" : "0")};
+    border-radius: 5px;
+  }
 `;
 
 const MobileItemContainer = styled.div`
   width: 50px;
   height: 50px;
-  color: ${color.white};
+  color: ${color.darkGrey};
   cursor: pointer;
   display: flex;
   justify-content: center;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import color from "../public/colors";
 
 const CusContainer = styled.div`
   width: 100%;
@@ -20,6 +21,7 @@ const CusRow = styled.div`
   flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
+  height: 100%;
 `;
 
 export const Row = ({ children }) => {
@@ -30,6 +32,7 @@ const CusCol12 = styled.div`
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
+  color: ${color.white};
 `;
 
 export const Col12 = ({ children }) => {
@@ -81,11 +84,19 @@ export const Col3 = ({ children }) => {
 const CusSection = styled.div`
   padding: 70px 0;
   background-color: ${({ bg }) => bg};
+  background-image: url(${({ img }) => img});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   @media (max-width: 991px) {
     padding: 50px 0;
   }
 `;
 
-export const Section = ({ children, bgColor }) => {
-  return <CusSection bg={bgColor}>{children}</CusSection>;
+export const Section = ({ children, bgColor, bgImg }) => {
+  return (
+    <CusSection bg={bgColor} img={bgImg}>
+      {children}
+    </CusSection>
+  );
 };
