@@ -12,6 +12,7 @@ import {
 } from "../components/CustomLayouts";
 import { H1, H2 } from "../components/Styling";
 import { homeHero } from "../public/imagesConfig";
+import { servicesArr } from "../public/data/servicesArr";
 
 const Hero = styled.div`
   padding: 70px 0;
@@ -46,6 +47,25 @@ const Title = styled.div`
   gap: 15px;
 `;
 
+const ServicesContainer = styled.div`
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+`;
+
+const ServicesItem = styled.div`
+  background-color: violet;
+  max-width: 30%;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+`;
+
 export default function Home({ post }) {
   const { title } = post;
   return (
@@ -63,6 +83,22 @@ export default function Home({ post }) {
           </Row>
         </Container>
       </Hero>
+      <Section>
+        <Container>
+          <Row>
+            <Col12>
+              <ServicesContainer>
+                {servicesArr.map((el, idx) => (
+                  <ServicesItem key={idx}>
+                    <img src={el.img} />
+                    <H2>{el.name}</H2>
+                  </ServicesItem>
+                ))}
+              </ServicesContainer>
+            </Col12>
+          </Row>
+        </Container>
+      </Section>
     </DefaultLayout>
   );
 }
