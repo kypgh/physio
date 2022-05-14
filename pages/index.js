@@ -2,7 +2,6 @@ import Image from "next/image";
 import styled from "styled-components";
 import sanityClient from "../utils/sanity";
 
-import DefaultLayout from "../components/DefaultLayout";
 import {
   Container,
   Row,
@@ -69,7 +68,7 @@ const ServicesItem = styled.div`
 export default function Home({ post }) {
   const { title } = post;
   return (
-    <DefaultLayout>
+    <>
       <Hero>
         <Container>
           <Row>
@@ -99,7 +98,7 @@ export default function Home({ post }) {
           </Row>
         </Container>
       </Section>
-    </DefaultLayout>
+    </>
   );
 }
 
