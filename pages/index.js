@@ -58,6 +58,9 @@ const ServicesItem = styled.div`
   background-color: violet;
   max-width: 30%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   img {
     width: 100%;
@@ -87,7 +90,7 @@ export default function Home({ post }) {
           <Row>
             <Col12>
               <ServicesContainer>
-                {servicesArr.map((el, idx) => (
+                {servicesArr.slice(0, 3).map((el, idx) => (
                   <ServicesItem key={idx}>
                     <img src={el.img} />
                     <H2>{el.name}</H2>

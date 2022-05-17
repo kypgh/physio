@@ -161,7 +161,12 @@ export default function NavigationBar() {
         <NavItemsContainer open={navOpen} ref={mobileNav}>
           {navItemsArr.map((x, idx) => (
             <Link key={idx} href={x.link} passHref>
-              <NavItem active={x.link === router.pathname}>{x.item}</NavItem>
+              <NavItem
+                active={x.link === router.pathname}
+                onClick={() => setNavOpen(false)}
+              >
+                {x.item}
+              </NavItem>
             </Link>
           ))}
         </NavItemsContainer>
