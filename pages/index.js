@@ -12,6 +12,7 @@ import {
 import { H1, H2 } from "../components/Styling";
 import { homeHero } from "../public/imagesConfig";
 import { servicesArr } from "../public/data/servicesArr";
+import color from "../public/colors";
 
 const Hero = styled.div`
   padding: 70px 0;
@@ -62,6 +63,13 @@ const ServicesItem = styled.div`
   flex-direction: column;
   align-items: center;
 
+  @media (max-width: 991px) {
+    max-width: calc(50% - 20px);
+  }
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
+
   img {
     width: 100%;
     height: auto;
@@ -89,8 +97,11 @@ export default function Home({ post }) {
         <Container>
           <Row>
             <Col12>
+              <H2 center color={color.black} mb={5}>
+                Our Services
+              </H2>
               <ServicesContainer>
-                {servicesArr.slice(0, 3).map((el, idx) => (
+                {servicesArr.slice(0, 6).map((el, idx) => (
                   <ServicesItem key={idx}>
                     <img src={el.img} />
                     <H2>{el.name}</H2>

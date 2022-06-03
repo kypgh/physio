@@ -6,7 +6,7 @@ export default function DefaultLayout({ children }) {
     <div>
       <NavigationBar />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
