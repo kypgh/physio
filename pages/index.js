@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
-import sanityClient from "../utils/sanity";
 
+import sanityClient from "../utils/sanity";
 import {
   Container,
   Row,
@@ -62,6 +62,9 @@ const ServicesItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 
   @media (max-width: 991px) {
     max-width: calc(50% - 20px);
@@ -73,11 +76,36 @@ const ServicesItem = styled.div`
   img {
     width: 100%;
     height: auto;
+    transition: 0.3s all ease;
+  }
+
+  &:hover img {
+    filter: grayscale(0.5);
+    transform: scale(1.1);
+  }
+`;
+
+const TextOverflow = styled.div`
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${color.lightBlue};
+  color: ${color.white};
+  padding: 5px 10px;
+  top: calc(100% - 32px - 5px - 5px);
+  transition: 0.3s all ease;
+  ${ServicesItem}:hover & {
+    top: 50%;
+    transform: translateY(-50%);
   }
 `;
 
 export default function Home({ post }) {
   const { title } = post;
+
   return (
     <>
       <Hero>
@@ -85,8 +113,10 @@ export default function Home({ post }) {
           <Row>
             <Col12>
               <Title>
-                <H1>Physiotherapy Ioannou Demetris</H1>
-                <H2>What Makes Us Better, Makes You Better.</H2>
+                <H1 color={color.white}>Physiotherapy Ioannou Demetris</H1>
+                <H2 color={color.white}>
+                  What Makes Us Better, Makes You Better.
+                </H2>
                 {title}
               </Title>
             </Col12>
@@ -96,15 +126,20 @@ export default function Home({ post }) {
       <Section>
         <Container>
           <Row>
-            <Col12>
-              <H2 center color={color.black} mb={5}>
+            <Col12 mb={5}>
+              <H2 center color={color.black}>
                 Our Services
               </H2>
+            </Col12>
+            <Col12>
               <ServicesContainer>
                 {servicesArr.slice(0, 6).map((el, idx) => (
                   <ServicesItem key={idx}>
                     <img src={el.img} />
-                    <H2>{el.name}</H2>
+                    <TextOverflow>
+                      <H2 mb={1}>{el.name}</H2>
+                      <p>{el.desc}</p>
+                    </TextOverflow>
                   </ServicesItem>
                 ))}
               </ServicesContainer>

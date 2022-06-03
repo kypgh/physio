@@ -32,53 +32,104 @@ const CusCol12 = styled.div`
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
-  color: ${color.white};
+  margin-bottom: ${({ mb }) => mb || "0"};
+  margin-top: ${({ mt }) => mt || "0"};
 `;
 
-export const Col12 = ({ children }) => {
-  return <CusCol12>{children}</CusCol12>;
+export const Col12 = ({ children, mb, mt }) => {
+  let stylesController = {
+    1: "10px",
+    2: "15px",
+    3: "20px",
+    4: "25px",
+    5: "30px",
+  };
+  return (
+    <CusCol12 mb={stylesController[mb]} mt={stylesController[mt]}>
+      {children}
+    </CusCol12>
+  );
 };
 
 const CusCol6 = styled.div`
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: ${({ mb }) => mb || "0"};
+  margin-top: ${({ mt }) => mt || "0"};
   @media (min-width: 992px) {
     max-width: 50%;
     flex: 0 0 50%;
   }
 `;
 
-export const Col6 = ({ children }) => {
-  return <CusCol6>{children}</CusCol6>;
+export const Col6 = ({ children, mb, mt }) => {
+  let stylesController = {
+    1: "10px",
+    2: "15px",
+    3: "20px",
+    4: "25px",
+    5: "30px",
+  };
+  return (
+    <CusCol6 mb={stylesController[mb]} mt={stylesController[mt]}>
+      {children}
+    </CusCol6>
+  );
 };
 
 const CusCol4 = styled.div`
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: ${({ mb }) => mb || "0"};
+  margin-top: ${({ mt }) => mt || "0"};
   @media (min-width: 992px) {
     max-width: 33%;
     flex: 0 0 33%;
   }
 `;
 
-export const Col4 = ({ children }) => {
-  return <CusCol4>{children}</CusCol4>;
+export const Col4 = ({ children, mb, mt }) => {
+  let stylesController = {
+    1: "10px",
+    2: "15px",
+    3: "20px",
+    4: "25px",
+    5: "30px",
+  };
+  return (
+    <CusCol4 mb={stylesController[mb]} mt={stylesController[mt]}>
+      {children}
+    </CusCol4>
+  );
 };
 
 const CusCol3 = styled.div`
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: ${({ mb }) => mb || "0"};
+  margin-top: ${({ mt }) => mt || "0"};
   @media (min-width: 992px) {
     max-width: 25%;
     flex: 0 0 25%;
   }
 `;
 
-export const Col3 = ({ children }) => {
-  return <CusCol3>{children}</CusCol3>;
+export const Col3 = ({ children, mb, mt }) => {
+  let stylesController = {
+    1: "10px",
+    2: "15px",
+    3: "20px",
+    4: "25px",
+    5: "30px",
+  };
+  return (
+    <CusCol3 mb={stylesController[mb]} mt={stylesController[mt]}>
+      {children}
+    </CusCol3>
+  );
 };
 
 const CusSection = styled.div`

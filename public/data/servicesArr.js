@@ -3,7 +3,7 @@ import { physiotherapy } from "../imagesConfig";
 export const servicesArr = [
   {
     name: "Orthopedic Injuries",
-    desc: "",
+    desc: "lkjashdf lakjsdhf askdjfh laksdhf lkajsdhf lajsdhf asd adsf ajsdhf asdf alsdh",
     img: physiotherapy,
     link: "",
   },
