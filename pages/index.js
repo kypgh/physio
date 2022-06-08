@@ -97,7 +97,13 @@ const TextOverflow = styled.div`
   padding: 5px 10px;
   top: calc(100% - 32px - 5px - 5px);
   transition: 0.3s all ease;
-  ${ServicesItem}:hover & {
+  @media (hover: hover) {
+    ${ServicesItem}:hover & {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  @media (hover: none) {
     top: 50%;
     transform: translateY(-50%);
   }
@@ -117,7 +123,7 @@ export default function Home({ post }) {
                 <H2 color={color.white}>
                   What Makes Us Better, Makes You Better.
                 </H2>
-                {title}
+                <p style={{ color: "#ffffff" }}>{title}</p>
               </Title>
             </Col12>
           </Row>

@@ -3,7 +3,7 @@ import { physiotherapy } from "../imagesConfig";
 export const servicesArr = [
   {
     name: "Orthopedic Injuries",
-    desc: "lkjashdf lakjsdhf askdjfh laksdhf lkajsdhf lajsdhf asd adsf ajsdhf asdf alsdh",
+    desc: "Orthopedic injuries include any injury to the musculoskeletal system. Often, these injuries relating to the bones and joints are a result of an accident or trauma to the body.",
     img: physiotherapy,
     link: "",
   },
