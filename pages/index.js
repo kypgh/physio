@@ -124,6 +124,7 @@ const AboutList = styled.div`
 
 export default function Home({ post }) {
   const { title } = post;
+  // console.log(servicesArr[0].img);
 
   return (
     <>
@@ -155,8 +156,8 @@ export default function Home({ post }) {
                 {servicesArr.slice(0, 6).map((el, idx) => (
                   <ServicesItem key={idx}>
                     <img src={el.img} />
-                    {/* <ImageWrapper width={333} height={333}>
-                      <Image src={el.img} priority layout="fill" />
+                    {/* <ImageWrapper width={el.img.width} height={el.img.height}>
+                      {el.img}
                     </ImageWrapper> */}
                     <TextOverflow>
                       <H2 mb={1}>{el.name}</H2>
