@@ -4,23 +4,22 @@ import Image from "next/image";
 const Outer = styled.div`
   position: relative;
   /* min-width: ${({ width }) => width}; */
-  max-width: ${({ width }) => width};
+  /* max-width: ${({ width }) => width}; */
   max-width: 100%;
   width: 100%;
-  min-height: ${({ height }) => height};
+  /* min-height: ${({ height }) => height}; */
   /* max-height: ${({ height }) => height}; */
-
   max-height: 100%;
   height: 100%;
-
-  /* & span {
+  & span {
+    position: relative !important;
     height: 100% !important;
   }
-
   & span img {
+    position: relative !important;
     width: inherit !important;
     height: 100% !important;
-  } */
+  }
 `;
 
 export default function ImageWrapper({
@@ -33,7 +32,7 @@ export default function ImageWrapper({
 
   return (
     <Outer width={width} height={height}>
-      <Image src={children} priority layout="fill" />
+      <Image src={children} priority layout="fill" objectFit="contain" />
     </Outer>
   );
 }

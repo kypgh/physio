@@ -155,10 +155,10 @@ export default function Home({ post }) {
               <ServicesContainer>
                 {servicesArr.slice(0, 6).map((el, idx) => (
                   <ServicesItem key={idx}>
-                    <img src={el.img} />
-                    {/* <ImageWrapper width={el.img.width} height={el.img.height}>
+                    {/* <img src={el.img} /> */}
+                    <ImageWrapper width={el.img.width} height={el.img.height}>
                       {el.img}
-                    </ImageWrapper> */}
+                    </ImageWrapper>
                     <TextOverflow>
                       <H2 mb={1}>{el.name}</H2>
                       <p>{el.desc}</p>
