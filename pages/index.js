@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 
+import ImageWrapper from "../components/ImageWrapper";
 import sanityClient from "../utils/sanity";
 import {
   Container,
@@ -109,6 +110,18 @@ const TextOverflow = styled.div`
   }
 `;
 
+const AboutList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  & h2 {
+    font-size: 22px;
+    font-weight: 700;
+    align-self: center;
+  }
+`;
+
 export default function Home({ post }) {
   const { title } = post;
 
@@ -142,6 +155,9 @@ export default function Home({ post }) {
                 {servicesArr.slice(0, 6).map((el, idx) => (
                   <ServicesItem key={idx}>
                     <img src={el.img} />
+                    {/* <ImageWrapper width={333} height={333}>
+                      <Image src={el.img} priority layout="fill" />
+                    </ImageWrapper> */}
                     <TextOverflow>
                       <H2 mb={1}>{el.name}</H2>
                       <p>{el.desc}</p>
@@ -150,6 +166,27 @@ export default function Home({ post }) {
                 ))}
               </ServicesContainer>
             </Col12>
+          </Row>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <Row>
+            <Col12>
+              <H2 color={color.black} mb={5} center>
+                About Us
+              </H2>
+            </Col12>
+            <Col6>
+              <img src="/images/physiotherapy.jpg" />
+            </Col6>
+            <Col6>
+              <AboutList>
+                <h2>Demetris Ioannou</h2>
+                <p>Address: Viotas 6, Agia Zwni Limassol</p>
+                <p>Tel: 99999999</p>
+              </AboutList>
+            </Col6>
           </Row>
         </Container>
       </Section>

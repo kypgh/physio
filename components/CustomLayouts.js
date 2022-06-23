@@ -22,6 +22,10 @@ const CusRow = styled.div`
   margin-left: -15px;
   margin-right: -15px;
   height: 100%;
+  & img {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const Row = ({ children }) => {
