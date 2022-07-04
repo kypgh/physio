@@ -115,6 +115,7 @@ export default function Footer() {
               <a
                 href="https://www.facebook.com/physiotherapydemetrisioannou"
                 target="_blank"
+                rel="noreferrer"
               >
                 Physiotherapy ioannou demetris
               </a>
