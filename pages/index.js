@@ -93,7 +93,7 @@ const TextOverflow = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${color.lightBlue};
+  background-color: ${color.secondary};
   color: ${color.white};
   padding: 5px 10px;
   top: calc(100% - 32px - 5px - 5px);

@@ -1,9 +1,9 @@
 const color = {
-  blue: "#093a59",
-  lightBlue: "#08486f",
-  grey: "#969696",
-  darkGrey: "#363636",
-  white: "#fefeff",
+  primary: "#093a59",
+  secondary: "#3da5d9",
+  green: "#17b890",
+  grey: "#acacac",
+  white: "#f0eff4",
   black: "#111111",
 };
 export default color;

@@ -13,8 +13,7 @@ const Position = styled.div`
   top: 0;
   left: 0;
   background-color: ${color.white};
-  box-shadow: 0px 5px 10px 0px ${color.darkGrey};
-  /* border-radius: 0px 0px 60px 0px; */
+  box-shadow: 0px 1px 10px 0px ${color.grey};
   z-index: 5;
 
   @media (max-width: 991px) {
@@ -25,14 +24,17 @@ const NavBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
+  padding: 0px 40px;
   max-width: 1140px;
   width: 100%;
   max-height: 100px;
   height: 100%;
   margin: auto;
+  position: relative;
+  background-color: ${color.white};
+
   @media (max-width: 991px) {
-    padding: 10px 15px;
+    padding: 0px 15px;
   }
 `;
 
@@ -44,7 +46,7 @@ const LogoContainer = styled.div`
   img {
     border-radius: 50%;
     margin: auto;
-    max-width: 90px;
+    max-width: 70px;
     height: auto;
     z-index: 2;
   }
@@ -69,25 +71,19 @@ const NavItemsContainer = styled.div`
   align-items: center;
 
   @media (max-width: 991px) {
-    position: fixed;
-    top: 100px;
-    left: ${({ open }) => (open ? "0px" : "-300px")};
+    position: absolute;
+    top: ${({ open }) => (open ? "100%" : "0")};
+    transform: translateY(${({ open }) => (open ? "0px" : "-100%")});
+    left: 0;
     transition: 0.3s all ease;
     background-color: ${color.white};
-    height: 100vh;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    max-width: 300px;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     gap: 20px;
-    padding-top: 20px;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(8, 72, 111, 1) 95%,
-      rgba(9, 58, 89, 1) 100%
-    );
+    padding: 20px 0;
+    height: fit-content;
+    z-index: -1;
   }
 `;
 
@@ -96,31 +92,28 @@ const NavItem = styled.a`
   font-size: 20px;
   font-weight: bold;
   margin: 0 10px;
-  color: ${({ active }) => (active ? color.darkGrey : color.grey)};
+  color: ${({ active }) => (active ? color.primary : color.grey)};
   border-bottom: ${({ active }) =>
-    active ? `2px solid ${color.darkGrey}` : "2px solid transparent"};
+    active ? `2px solid ${color.primary}` : "2px solid transparent"};
   transition: 0.3s all ease;
   cursor: pointer;
   text-transform: uppercase;
 
   @media (max-width: 991px) {
-    color: ${({ active }) => (active ? color.white : color.blue)};
-    background-color: ${({ active }) =>
-      active ? color.lightBlue : "tranparent"};
+    color: ${({ active }) => (active ? color.primary : color.grey)};
     border: none;
-    padding: ${({ active }) => (active ? "5px 15px" : "0")};
-    border-radius: 5px;
   }
 `;
 
 const MobileItemContainer = styled.div`
   width: 50px;
-  height: 50px;
-  color: ${color.darkGrey};
+  height: 5px;
+  color: ${color.primary};
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 30px;
 `;
 
 export default function NavigationBar() {
@@ -176,7 +169,7 @@ export default function NavigationBar() {
             ref={openButton}
             onClick={() => setNavOpen(!navOpen)}
           >
-            {navOpen ? "x" : "✔"}
+            {navOpen ? "x" : "N"}
           </MobileItemContainer>
         )}
       </NavBar>

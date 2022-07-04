@@ -8,7 +8,7 @@ import { navItemsArr } from "../public/data/navItemsArr";
 const CusFooter = styled.div`
   padding: 15px;
   width: 100%;
-  background-color: ${color.lightBlue};
+  background-color: ${color.secondary};
 `;
 
 const Inner = styled.div`
