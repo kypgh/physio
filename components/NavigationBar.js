@@ -7,6 +7,7 @@ import color from "../public/colors";
 import { logo } from "../public/imagesConfig";
 import { useWindowSize } from "../utils/functions";
 import { navItemsArr } from "../public/data/navItemsArr";
+import { openIcon, closeIcon } from "../public/imagesConfig";
 
 const Position = styled.div`
   position: sticky;
@@ -106,14 +107,19 @@ const NavItem = styled.a`
 `;
 
 const MobileItemContainer = styled.div`
-  width: 50px;
-  height: 5px;
+  width: 30px;
+  height: 30px;
   color: ${color.primary};
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
+
+  & img {
+    max-width: 100%;
+    height: auto;
+  }
 `;
 
 export default function NavigationBar() {
@@ -169,7 +175,7 @@ export default function NavigationBar() {
             ref={openButton}
             onClick={() => setNavOpen(!navOpen)}
           >
-            {navOpen ? "x" : "N"}
+            {navOpen ? <img src={closeIcon} /> : <img src={openIcon} />}
           </MobileItemContainer>
         )}
       </NavBar>
