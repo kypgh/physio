@@ -191,6 +191,17 @@ export default function Home({ post }) {
           </Row>
         </Container>
       </Section>
+      <Section>
+        <Container>
+          <Row>
+            <Col12>
+              <H2 color={color.black} mb={5} center>
+                Contact Us
+              </H2>
+            </Col12>
+          </Row>
+        </Container>
+      </Section>
     </>
   );
 }
