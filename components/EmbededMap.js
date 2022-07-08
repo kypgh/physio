@@ -11,7 +11,7 @@ export default function EmbededMap({ width = "600px", height = "450px" }) {
         height: height,
         margin: "auto",
       }}
-      allowfullscreen=""
+      allowFullScreen
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
