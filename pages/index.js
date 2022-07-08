@@ -115,6 +115,7 @@ const AboutList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-self: flex-start;
 
   & h2 {
     font-size: 22px;

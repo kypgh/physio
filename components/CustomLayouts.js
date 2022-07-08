@@ -22,6 +22,7 @@ const CusRow = styled.div`
   margin-left: -15px;
   margin-right: -15px;
   height: 100%;
+  row-gap: 20px;
   & img {
     width: 100%;
     height: auto;
@@ -33,6 +34,9 @@ export const Row = ({ children }) => {
 };
 
 const CusCol12 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
@@ -56,6 +60,9 @@ export const Col12 = ({ children, mb, mt }) => {
 };
 
 const CusCol6 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
@@ -83,6 +90,9 @@ export const Col6 = ({ children, mb, mt }) => {
 };
 
 const CusCol4 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
@@ -110,6 +120,9 @@ export const Col4 = ({ children, mb, mt }) => {
 };
 
 const CusCol3 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
