@@ -14,6 +14,7 @@ import { H1, H2 } from "../components/Styling";
 import { homeHero } from "../public/imagesConfig";
 import { servicesArr } from "../public/data/servicesArr";
 import color from "../public/colors";
+import EmbededMap from "../components/EmbededMap";
 
 const Hero = styled.div`
   padding: 70px 0;
@@ -199,6 +200,16 @@ export default function Home({ post }) {
                 Contact Us
               </H2>
             </Col12>
+            <Col6>
+              <EmbededMap />
+            </Col6>
+            <Col6>
+              <AboutList>
+                <h2>Demetris Ioannou</h2>
+                <p>Address: Viotas 6, Agia Zwni Limassol</p>
+                <p>Tel: 99999999</p>
+              </AboutList>
+            </Col6>
           </Row>
         </Container>
       </Section>
