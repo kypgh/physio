@@ -7,6 +7,11 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
 @font-face {
     font-family: 'Inter', sans-serif;
     src: url(/public/fonts/Inter-Thin.ttf) format("truetype");

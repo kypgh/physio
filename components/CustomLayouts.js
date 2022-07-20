@@ -161,9 +161,9 @@ const CusSection = styled.div`
   }
 `;
 
-export const Section = ({ children, bgColor, bgImg }) => {
+export const Section = ({ children, bgColor, bgImg, id }) => {
   return (
-    <CusSection bg={bgColor} img={bgImg}>
+    <CusSection id={id} bg={bgColor} img={bgImg}>
       {children}
     </CusSection>
   );

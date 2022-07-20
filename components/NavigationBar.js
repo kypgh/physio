@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useState, useRef, useEffect } from "react";
 
 import color from "../public/colors";
@@ -124,8 +123,8 @@ const MobileItemContainer = styled.div`
 
 export default function NavigationBar() {
   const [navOpen, setNavOpen] = useState(false);
+  const [selectedTab, setSelectedTab] = useState(0);
 
-  const router = useRouter();
   const { width } = useWindowSize();
 
   // on click away to close mobile navigation
@@ -149,8 +148,8 @@ export default function NavigationBar() {
   return (
     <Position>
       <NavBar>
-        <Link href={"/"} passHref>
-          <a>
+        <Link href={"#hero"} passHref>
+          <a onClick={() => setSelectedTab(0)}>
             <LogoContainer>
               <img src={logo}></img>
             </LogoContainer>
@@ -161,8 +160,8 @@ export default function NavigationBar() {
           {navItemsArr.map((x, idx) => (
             <Link key={idx} href={x.link} passHref>
               <NavItem
-                active={x.link === router.pathname}
-                onClick={() => setNavOpen(false)}
+                active={idx === selectedTab}
+                onClick={() => setSelectedTab(idx)}
               >
                 {x.item}
               </NavItem>

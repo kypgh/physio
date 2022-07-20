@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import Link from "next/link";
+
+import { FaFacebook, FaPhoneAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 import { logo } from "../public/imagesConfig";
 import color from "../public/colors";
-import { navItemsArr } from "../public/data/navItemsArr";
 
 const CusFooter = styled.div`
-  padding: 15px;
   width: 100%;
-  background-color: ${color.secondary};
+  background-color: ${color.white};
 `;
 
 const Inner = styled.div`
@@ -18,6 +18,7 @@ const Inner = styled.div`
   max-width: 1140px;
   width: 100%;
   margin: auto;
+  padding: 15px;
 `;
 const LogoContainer = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const LogoContainer = styled.div`
   position: relative;
 
   img {
-    max-width: 200px;
+    max-width: 100px;
     height: auto;
     z-index: 1;
   }
@@ -43,11 +44,14 @@ const LogoContainer = styled.div`
     transform: translate(-50%, -50%);
     filter: blur(20px);
   }
+
+  @media (max-width: 991px) {
+    display: none;
+  }
 `;
 
 const InfoContainer = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
@@ -57,10 +61,11 @@ const InfoContainer = styled.div`
 
 const SocialsContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 15px;
-  max-width: fit-content;
+  max-width: 100%;
   width: 100%;
   /* margin: auto; */
 `;
@@ -68,37 +73,23 @@ const SocialsContainer = styled.div`
 const Socials = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
   justify-content: flex-start;
-  width: 100%;
+  width: fit-content;
 
-  h3 {
+  svg {
+    color: ${color.primary};
     font-size: 22px;
-    font-weight: bold;
   }
   p {
     font-size: 18px;
-    color: ${color.white};
+    color: ${color.secondary};
+    font-weight: 700;
   }
   a {
-    color: ${color.white};
+    color: ${color.secondary};
+    font-weight: 700;
   }
-`;
-
-const MenuItemsContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 15px;
-`;
-
-const MenuItem = styled.a`
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0 10px;
-  color: ${color.white};
-  cursor: pointer;
-  text-transform: uppercase;
 `;
 
 export default function Footer() {
@@ -111,7 +102,7 @@ export default function Footer() {
         <InfoContainer>
           <SocialsContainer>
             <Socials>
-              <h3>Facebook: </h3>
+              <FaFacebook />
               <a
                 href="https://www.facebook.com/physiotherapydemetrisioannou"
                 target="_blank"
@@ -121,23 +112,16 @@ export default function Footer() {
               </a>
             </Socials>
             <Socials>
-              <h3>Email: </h3>
+              <MdEmail />
               <a href="mailto: ioannoydemetris@hotmail.com">
                 ioannoydemetris@hotmail.com
               </a>
             </Socials>
             <Socials>
-              <h3>Tel: </h3>
+              <FaPhoneAlt />
               <p>9999999999</p>
             </Socials>
           </SocialsContainer>
-          <MenuItemsContainer>
-            {navItemsArr.map((x, idx) => (
-              <Link key={idx} href={x.link} passHref>
-                <MenuItem>{x.item}</MenuItem>
-              </Link>
-            ))}
-          </MenuItemsContainer>
         </InfoContainer>
       </Inner>
     </CusFooter>

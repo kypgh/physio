@@ -130,7 +130,7 @@ export default function Home({ post }) {
 
   return (
     <>
-      <Hero>
+      <Hero id="hero">
         <Container>
           <Row>
             <Col12>
@@ -145,7 +145,7 @@ export default function Home({ post }) {
           </Row>
         </Container>
       </Hero>
-      <Section>
+      <Section id="services">
         <Container>
           <Row>
             <Col12 mb={5}>
@@ -172,7 +172,7 @@ export default function Home({ post }) {
           </Row>
         </Container>
       </Section>
-      <Section>
+      <Section id="about" bgColor={color.white}>
         <Container>
           <Row>
             <Col12>
@@ -193,7 +193,7 @@ export default function Home({ post }) {
           </Row>
         </Container>
       </Section>
-      <Section>
+      <Section id="contact">
         <Container>
           <Row>
             <Col12>
